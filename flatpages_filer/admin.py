@@ -15,6 +15,8 @@ class FlatPageMetaAdmin(admin.ModelAdmin):
 
 admin.site.register(FlatPageMeta, FlatPageMetaAdmin)
 
+class PropertyInline(admin.StackedInline):
+    model = FlatPageProperty
 
 class MetaInline(admin.StackedInline):
     model = FlatPageMeta
@@ -36,7 +38,8 @@ class FlatPageAdmin(StockFlatPageAdmin):
                                  'registration_required', 'sites')}),
     )
     form = CustomFlatPageForm
-    inlines = [MetaInline,
+    inlines = [PropertyInline,
+               MetaInline,
                ImageInline,
                AttachmentInline,
 
@@ -48,5 +51,6 @@ class FlatPageAdmin(StockFlatPageAdmin):
 
 admin.site.unregister(FlatPage)
 admin.site.register(FlatPage, FlatPageAdmin)
+admin.site.register(FlatPageProperty)
 admin.site.register(FlatPageImage)
 admin.site.register(Revision)

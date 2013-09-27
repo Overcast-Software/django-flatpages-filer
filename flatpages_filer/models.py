@@ -9,6 +9,16 @@ from filer.fields.file import FilerFileField
 from django.utils.encoding import smart_unicode
 
 # Create your models here.
+PROPERTY_TYPE_CHOICES = (
+    ('int', 'Integer'),
+    ('str', 'String'),
+)
+
+class FlatPageProperty(models.Model):
+    prop_type = models.CharField(blank=False, max_length=3, null=False, blank=False, choices=PROPERTY_TYPE_CHOICES)
+    name = models.CharField(blank=False, max_length=255, null=False, blank=False)
+    prop_value = models.TextField(verbose_name=_('Property Value'), blank=True)
+
 class FlatPageMeta(models.Model):
     flatpage = models.OneToOneField(FlatPage, related_name="metadata")
     created = models.DateTimeField(auto_now_add=True)
