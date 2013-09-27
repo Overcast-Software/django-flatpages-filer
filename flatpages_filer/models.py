@@ -19,7 +19,7 @@ class FlatPageProperty(models.Model):
     prop_type = models.CharField(blank=False, max_length=3, null=False, choices=PROPERTY_TYPE_CHOICES)
     name = models.CharField(blank=False, max_length=255, null=False)
     prop_value = models.TextField(verbose_name=_('Property Value'), blank=True)
-    order = models.Integer(verbose_name=_('Sort order'), blank=False)
+    order = models.IntegerField(verbose_name=_('Sort order'), blank=False)
 
     class  Meta:
         verbose_name = "Page Property"
