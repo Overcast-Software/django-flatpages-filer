@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.flatpages.admin import FlatPageAdmin as StockFlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from django.utils.translation import ugettext_lazy as _
-from .models import FlatPageImage, FlatPageMeta, FlatPageAttachment, Revision
+from .models import FlatPageImage, FlatPageMeta, FlatPageAttachment, Revision, FlatPageProperty
 from .forms import CustomFlatPageForm
 
 
