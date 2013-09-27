@@ -15,7 +15,7 @@ PROPERTY_TYPE_CHOICES = (
 )
 
 class FlatPageProperty(models.Model):
-    flatpage = models.OneToOneField(FlatPage)
+    flatpage = models.ForeignKey(FlatPage, related_name='properties')
     prop_type = models.CharField(blank=False, max_length=3, null=False, choices=PROPERTY_TYPE_CHOICES)
     name = models.CharField(blank=False, max_length=255, null=False)
     prop_value = models.TextField(verbose_name=_('Property Value'), blank=True)
