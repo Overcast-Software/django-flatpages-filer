@@ -17,9 +17,24 @@ PROPERTY_TYPE_CHOICES = (
     ('string', 'General data'),
 )
 
+OBJECT_TYPE_CHOICES = (
+    ('student', 'Student'),
+    ('teacher', 'Teacher'),
+    ('course', 'Course'),
+)
+
+DIVISION_TYPE_CHOICES = (
+    ('leiklist', 'Leiklist'),
+    ('leikstjorn', 'Leikstjórn'),
+    ('handrit', 'Handrit'),
+    ('taeknivinna', 'Tæknivinna'),
+)
+
 class FlatPageProperty(models.Model):
     flatpage = models.ForeignKey(FlatPage, related_name='properties')
     prop_type = models.CharField(blank=False, max_length=10, null=False, choices=PROPERTY_TYPE_CHOICES, verbose_name='Property type')
+    obj_type = models.CharField(blank=True, max_length=10, null=True, choices=OBJECT_TYPE_CHOICES, verbose_name='Object type')
+    div_type = models.CharField(blank=True, max_length=10, null=True, choices=DIVISION_TYPE_CHOICES, verbose_name='Division')
     prop_value = models.TextField(verbose_name=_('Property Value'), blank=True)
     order = models.IntegerField(verbose_name=_('Sort order'), blank=False)
 
