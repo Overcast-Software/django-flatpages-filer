@@ -15,6 +15,7 @@ PROPERTY_TYPE_CHOICES = (
     ('image', 'Image'),
     ('caption', 'Caption'),
     ('string', 'General data'),
+    ('css_class', 'CSS Class'),
 )
 
 OBJECT_TYPE_CHOICES = (
