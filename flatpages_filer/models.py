@@ -25,10 +25,10 @@ OBJECT_TYPE_CHOICES = (
 )
 
 DIVISION_TYPE_CHOICES = (
-    ('leiklist', 'Leiklist'),
-    ('leikstjorn', 'Leikstjórn'),
-    ('handrit', 'Handrit'),
-    ('taeknivinna', 'Tæknivinna'),
+    ('leiklist', u'Leiklist'),
+    ('leikstjorn', u'Leikstjórn'),
+    ('handrit', u'Handrit'),
+    ('taeknivinna', u'Tæknivinna'),
 )
 
 class FlatPageProperty(models.Model):
