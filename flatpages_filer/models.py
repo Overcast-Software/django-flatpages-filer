@@ -25,6 +25,7 @@ OBJECT_TYPE_CHOICES = (
     ('student', 'Student'),
     ('teacher', 'Teacher'),
     ('course', 'Course'),
+    ('staff', 'Staff'),
 )
 
 DIVISION_TYPE_CHOICES = (
